@@ -6,24 +6,25 @@ import Values from 'values.js';
 function App() {
   const [color, setColor] = useState('');
   const [error, setError] = useState(false);
-  //initailise some default values
-  const [list, setList] = useState(new Values('#4cc9f0').all(10));
+  //initailise some default values, the state comes from an external library called values
+  const [list, setList] = useState(new Values('#4cc9f0').all(10)); //load some colors by default
 
   const handleSubmit = (e) => {
     e.preventDefault();
     try {
-      //console.log('handleSubmit function executed');
       //generate color using values library
-      let colors = new Values(color).all(10);
+      let colors = new Values(color).all(10); //(color) is coming from the state
       console.log(colors);
       //populate the setlist array with colors
       setList(colors);
     } catch (error) {
+      //silently log the errors to the console
       setError(true);
       console.log(error);
     }
   };
 
+  //use the spreas operator to copy the values
   return (
     <>
       <section className='container'>
