@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import { AppProvider } from './context';
+//wrap the app provider on top of the whole app
 ReactDOM.render(
   <React.StrictMode>
     <AppProvider>

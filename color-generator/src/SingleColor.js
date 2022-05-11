@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import rgbToHex from './utils';
-
+//destructure the values from acolor rgb, weight
 const SingleColor = ({ rgb, weight, index, hexColor }) => {
-  const [alert, setAlert] = useState(false);
+  const [alert, setAlert] = useState(false); // displayed when copying an item to clipboard
   //convert rgb array to string
   const rgbColors = rgb.join(',');
-  //convert rgbtohex using external lib
-  const hex = rgbToHex(...rgb);
-  //add # to hexcolor
+
   const hexValue = `#${hexColor}`;
 
   //when
